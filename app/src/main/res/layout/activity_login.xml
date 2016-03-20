@@ -1,3 +1,8 @@
+<!-- author     : selen
+     date       : 19 march 2016
+     description: LOGIN PAGE Layout
+                  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -5,23 +10,26 @@
     android:orientation="vertical"
     android:layout_height="match_parent">
 
-
+    <!-- username text-->
     <TextView
         android:text="Username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- username entry taker -->
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content" />
 
+    <!-- password text-->
     <TextView
         android:text="Password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- password entry taker -->
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
@@ -29,6 +37,7 @@
         android:layout_marginBottom="10dp"
         android:layout_height="wrap_content" />
 
+    <!-- button for login -->
     <Button
         android:id="@+id/bLogin"
         android:layout_width="match_parent"
@@ -36,6 +45,8 @@
         android:layout_height="wrap_content"
         android:text="Login" />
 
+
+    <!-- "register here" link -->
     <TextView
         android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"
