@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- username entry taker -->
+    <!-- username entries taker -->
     <EditText
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
