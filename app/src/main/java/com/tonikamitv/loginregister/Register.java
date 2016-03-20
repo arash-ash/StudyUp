@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-// HEY ECE!
+// HEY ECE!!
 public class Register extends ActionBarActivity implements View.OnClickListener{
     EditText etName, etAge, etUsername, etPassword;
     Button bRegister;
