@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <!-- password entry taker -->
+    <!-- password entries taker -->
     <EditText
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
