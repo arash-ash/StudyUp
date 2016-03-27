@@ -6,10 +6,12 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+// implementing clickListener
 
-// HEY ECE!!
 public class Register extends ActionBarActivity implements View.OnClickListener{
-    EditText etName, etAge, etUsername, etPassword;
+
+    // properties
+    EditText etName, etDepartment, etUsername, etPassword;
     Button bRegister;
 
     @Override
@@ -17,12 +19,15 @@ public class Register extends ActionBarActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        // in the register activity, it will find the view (using id) and
+        // cast it to edit text and then assign to properties
         etName = (EditText) findViewById(R.id.etName);
-        etAge = (EditText) findViewById(R.id.etAge);
+        etDepartment = (EditText) findViewById(R.id.etDepartment);
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         bRegister = (Button) findViewById(R.id.bRegister);
 
+        // setting up click listener
         bRegister.setOnClickListener(this);
     }
 
@@ -33,9 +38,9 @@ public class Register extends ActionBarActivity implements View.OnClickListener{
                 String name = etName.getText().toString();
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
-                int age = Integer.parseInt(etAge.getText().toString());
+                String department = etDepartment.getText().toString();
 
-                User user = new User(name, age, username, password);
+                User user = new User(name, department, username, password);
                 registerUser(user);
                 break;
         }

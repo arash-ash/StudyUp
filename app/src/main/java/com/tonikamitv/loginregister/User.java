@@ -2,17 +2,23 @@ package com.tonikamitv.loginregister;
 
 public class User {
 
-    String name, username, password;
-    int age;
+    String name, username, password, department;
 
-    public User(String name, int age, String username, String password) {
+
+    public User(String name, String department, String username, String password) {
         this.name = name;
-        this.age = age;
+        this.department = department;
         this.username = username;
         this.password = password;
     }
 
-    public User(String username, String password) {
-        this("", -1, username, password);
+    // 2nd constructor when the user does not provide department and name
+
+    public User(String username, String password)
+    {
+        this.username = username;
+        this.password= password;
+        this.department = "";
+        this.name = "";
     }
 }

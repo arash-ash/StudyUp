@@ -9,10 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-
+// implementing to handle click events
 public class Login extends ActionBarActivity implements View.OnClickListener {
+
+    // properties
     Button bLogin;
-    TextView registerLink;
+    TextView tvRegisterLink; //link beneath
     EditText etUsername, etPassword;
 
     UserLocalStore userLocalStore;
@@ -22,21 +24,26 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // in the login activity, it will find the view (using id) and
+        // cast it to edit text and then assign to properties
         bLogin = (Button) findViewById(R.id.bLogin);
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
-        registerLink = (TextView) findViewById(R.id.tvRegisterLink);
+        tvRegisterLink = (TextView) findViewById(R.id.tvRegisterLink);
 
+        // starts listening for clicks on blogin button and register link
         bLogin.setOnClickListener(this);
-        registerLink.setOnClickListener(this);
+        tvRegisterLink.setOnClickListener(this);
 
         userLocalStore = new UserLocalStore(this);
     }
 
     @Override
+    // overrides listener interface methods
+    // switch is for distinguishing between the possible sources of click event
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.bLogin:
+            case R.id.bLogin: // resembles to if statements - if the login button is notified
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
 
@@ -44,9 +51,9 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
 
                 authenticate(user);
                 break;
-            case R.id.tvRegisterLink:
+            case R.id.tvRegisterLink: // if the register link is called
                 Intent registerIntent = new Intent(Login.this, Register.class);
-                startActivity(registerIntent);
+                startActivity(registerIntent); // start the register activity when it is clicked
                 break;
         }
     }
@@ -67,7 +74,7 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
 
     private void showErrorMessage() {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Login.this);
-        dialogBuilder.setMessage("Incorrect user details");
+        dialogBuilder.setMessage("Sorry, incorrect username or password.");
         dialogBuilder.setPositiveButton("Ok", null);
         dialogBuilder.show();
     }
