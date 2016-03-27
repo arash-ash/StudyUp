@@ -12,7 +12,7 @@ public class User {
         this.password = password;
     }
 
-    // 2nd constructor when the user does not provide department and name
+    // 2nd constructor for when the user does not provide department and name in the login activity
 
     public User(String username, String password)
     {

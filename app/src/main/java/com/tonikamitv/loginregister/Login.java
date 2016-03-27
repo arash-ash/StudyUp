@@ -17,6 +17,7 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
     TextView tvRegisterLink; //link beneath
     EditText etUsername, etPassword;
 
+    // access to local store
     UserLocalStore userLocalStore;
 
     @Override
@@ -81,7 +82,8 @@ public class Login extends ActionBarActivity implements View.OnClickListener {
 
     private void logUserIn(User returnedUser) {
         userLocalStore.storeUserData(returnedUser);
-        userLocalStore.setUserLoggedIn(true);
-        startActivity(new Intent(this, MainActivity.class));
+        userLocalStore.setUserLoggedIn(true); // if correct username and password are provided by the user
+                                              // the user logs in
+        startActivity(new Intent(this, MainActivity.class)); // an instance of main activity starts after login
     }
 }

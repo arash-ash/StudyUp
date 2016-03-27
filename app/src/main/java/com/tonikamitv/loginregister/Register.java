@@ -35,11 +35,13 @@ public class Register extends ActionBarActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bRegister:
+                // getting the texts from edit text view
                 String name = etName.getText().toString();
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
                 String department = etDepartment.getText().toString();
 
+                // using the entered texts to create a new user
                 User user = new User(name, department, username, password);
                 registerUser(user);
                 break;
