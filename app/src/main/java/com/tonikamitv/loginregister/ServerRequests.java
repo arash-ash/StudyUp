@@ -78,9 +78,9 @@ public class ServerRequests {
             //that we want to send to the server
             ArrayList<NameValuePair> dataToSend = new ArrayList<>();
             dataToSend.add(new BasicNameValuePair("name", user.name));
+            dataToSend.add(new BasicNameValuePair("department", user.department));
             dataToSend.add(new BasicNameValuePair("username", user.username));
             dataToSend.add(new BasicNameValuePair("password", user.password));
-            dataToSend.add(new BasicNameValuePair("age", user.age + ""));
 
             // allows to change the attributes of the Http request
             HttpParams httpRequestParams = getHttpRequestParams();
@@ -173,10 +173,10 @@ public class ServerRequests {
                     // gives confirmation message
                     Log.v("happened", "2");
                     String name = jObject.getString("name");
-                    int age = jObject.getInt("age");
+                    String department = jObject.getString("department");
 
                     // created the user with found information
-                    returnedUser = new User(name, age, user.username,
+                    returnedUser = new User(name, department, user.username,
                             user.password);
                 }
 

@@ -21,7 +21,7 @@ public class UserLocalStore {
         userLocalDatabaseEditor.putString("name", user.name);
         userLocalDatabaseEditor.putString("username", user.username);
         userLocalDatabaseEditor.putString("password", user.password);
-        userLocalDatabaseEditor.putInt("age", user.age);
+        userLocalDatabaseEditor.putString("department", user.department);
         userLocalDatabaseEditor.commit();
     }
 
@@ -45,9 +45,9 @@ public class UserLocalStore {
         String name = userLocalDatabase.getString("name", "");
         String username = userLocalDatabase.getString("username", "");
         String password = userLocalDatabase.getString("password", "");
-        int age = userLocalDatabase.getInt("age", -1);
+        String department = userLocalDatabase.getString("department", "");
 
-        User user = new User(name, age, username, password);
+        User user = new User(name, department, username, password);
         return user;
     }
 }

@@ -62,6 +62,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         User user = userLocalStore.getLoggedInUser();
         etUsername.setText(user.username);
         etName.setText(user.name);
-        etDepartment.setText(user.department + "");
+        etDepartment.setText(user.department);
     }
 }
