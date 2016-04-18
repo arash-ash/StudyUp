@@ -1,4 +1,4 @@
-/*author: by Hamza
+/*author:  Hamza Saeed Khan
 */
 
 package com.tonikamitv.loginregister;
