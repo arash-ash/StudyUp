@@ -1,3 +1,6 @@
+/*author: by Hamza
+*/
+
 package com.tonikamitv.loginregister;
 
 import android.content.Intent;
